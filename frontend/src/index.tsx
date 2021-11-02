@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
+
 import 'assets/css/style.css';
 
 import React from 'react';
@@ -13,4 +14,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
