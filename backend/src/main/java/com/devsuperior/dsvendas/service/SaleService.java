@@ -19,13 +19,14 @@ public class SaleService {
     @Autowired
     private SaleRepository repository;
 
+    @Autowired
     private SelleRepository sellerRepository;
 
 
     @Transactional(readOnly = true)
-    public Page<SaleDTO> findAll(Pageable pageble) {
+    public Page<SaleDTO> findAll(Pageable pageable) {
         sellerRepository.findAll ();
-        Page<Sale> result = repository.findAll ( pageble );
+        Page<Sale> result = repository.findAll ( pageable );
         return result.map ( x -> new SaleDTO ( x ) );
     }
 
@@ -35,7 +36,7 @@ public class SaleService {
     }
 
     @Transactional(readOnly = true)
-    public List<SaleSuccessDTO> successtGroupedBySeller() {
+    public List<SaleSuccessDTO> successGroupedBySeller() {
         return repository.successGroupedBySeller ();
     }
 }
